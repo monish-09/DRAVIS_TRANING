@@ -1,15 +1,16 @@
-# Question1 A shopkeeper wants to calculate total bill after discount
+# 1. Copy contents of one file into another. 
+#  Copy the Contents of one file into another
 
-# Taking input from user
-price = float(input("Enter original price: "))
-discount = float(input("Enter discount percentage: "))
+# source file read mode me open karo
+with open("source.txt", "r") as source:
+    
+    # destination file write mode me open karo
+    with open("destination.txt", "w") as dest:
+        
+        # pura content read karo
+        content = source.read()
+        
+        # destination file me likho
+        dest.write(content)
 
-# Calculating discount amount
-discount_amount = (discount * price) / 100
-
-# Final bill
-total_bill = price - discount_amount
-
-# Output
-print("Discount Amount:", discount_amount)
-print("Total Bill after Discount:", total_bill)
+print("File copied successfully!")
